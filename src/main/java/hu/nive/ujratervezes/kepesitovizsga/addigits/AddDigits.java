@@ -1,8 +1,5 @@
 package hu.nive.ujratervezes.kepesitovizsga.addigits;
 
-import java.util.Set;
-import java.util.TreeSet;
-
 public class AddDigits {
 
     public int addDigits(String input) {
