@@ -12,14 +12,14 @@ public class Army {
     }
 
     public void damageAll(int damage) {
-        List<MilitaryUnit> removed = new ArrayList<>();
+        List<MilitaryUnit> remain = new ArrayList<>();
         for (MilitaryUnit item : army) {
             item.sufferDamage(damage);
             if (item.getHitPoints() >= 25) {
-                removed.add(item);
+                remain.add(item);
             }
         }
-        army = new ArrayList<>(removed);
+        army = new ArrayList<>(remain);
     }
 
     public int getArmyDamage() {

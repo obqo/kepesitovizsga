@@ -4,9 +4,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Phonebook {
 
@@ -15,7 +13,7 @@ public class Phonebook {
             throw new IllegalArgumentException("Empty parameter!");
         }
         try (BufferedWriter writer = Files.newBufferedWriter(Path.of(output))) {
-            for (String key: contacts.keySet()) {
+            for (String key : contacts.keySet()) {
                 writer.write(key + ": " + contacts.get(key) + "\n");
             }
         } catch (IOException ioe) {

@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JurassicPark {
@@ -26,7 +26,7 @@ public class JurassicPark {
     }
 
     private List<String> selectPopulationByPS(PreparedStatement ps) {
-        List<String> result = new LinkedList<>();
+        List<String> result = new ArrayList<>();
         try (ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 result.add(rs.getString("breed"));
@@ -36,5 +36,4 @@ public class JurassicPark {
             throw new IllegalStateException("Cannot query!", se);
         }
     }
-
 }

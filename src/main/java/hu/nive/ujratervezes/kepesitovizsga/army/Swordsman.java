@@ -11,9 +11,10 @@ public class Swordsman extends MilitaryUnit {
 
     @Override
     public void sufferDamage(int damage) {
-        if (!shield) {
-            super.sufferDamage(damage);
+        if (shield) {
+            shield = false;
+            return;
         }
-        shield = false;
+        super.sufferDamage(damage);
     }
 }
